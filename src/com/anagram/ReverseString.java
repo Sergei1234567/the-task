@@ -1,19 +1,31 @@
 package com.anagram;
 
+
+import java.util.StringTokenizer;
+import java.util.*;
 import java.lang.*;
 import java.io.*;
-import java.util.*;
-
-public class ReverseString {
+ class STDemo {
+	static String line = "#he&lo @%w$o,r!ld.";
+	static String key;
+	static String val;
 	public static void main(String[] args) {
-		//String input = "#he&lo %w$or!ld";
-
-		StringBuilder input1 = new StringBuilder("#he&lo %w$or!ld");
-
-		//input1.append(input);
-
-		input1 = input1.reverse();
-		System.out.println(input1);
+		StringTokenizer theWords = new StringTokenizer(line, "@.");
+		StringBuilder line1 = new StringBuilder();
+		StringBuilder line2 = new StringBuilder();
+		while (theWords.hasMoreTokens()) {
+			key = theWords.nextToken();
+			val = theWords.nextToken();
+			// Выводим лексимы в консоль
+			System.out.println(key + "" + val);
+		}
+		line1.append(key);
+		line1 = line1.reverse();
+		line2.append(val);
+		line2 = line2.reverse();
+		
+		System.out.println(line1 + " " + line2);
+		
 	}
 
 }
