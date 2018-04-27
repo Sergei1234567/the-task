@@ -8,11 +8,10 @@ class ReverseString {
 
 		String line = "#he&lo @%w$o,r!ld.";
 		String delim = "#&@%$,!";
-		String token;
-		StringTokenizer theWords = new StringTokenizer(line, delim);
+		StringTokenizer tokenazer = new StringTokenizer(line, delim);
 
-		while (theWords.hasMoreTokens()) {
-			token = theWords.nextToken();
+		while (tokenazer.hasMoreTokens()) {
+			String token = tokenazer.nextToken();
 			System.out.println(token);
 		}
 
