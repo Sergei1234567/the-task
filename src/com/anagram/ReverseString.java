@@ -3,11 +3,10 @@ package com.anagram;
 import java.util.StringTokenizer;
 
 class ReverseString {
-	static String token1;
-	static String token2;
 
 	public static void main(String[] args) {
-
+		String token1 = "";
+		String token2 = "";
 		String sentence = "#he&lo @%w$o,r!ld.";
 		String delim = "@.";
 
