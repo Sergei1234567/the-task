@@ -6,18 +6,17 @@ class ReverseString {
 
 	public static void main(String[] args) {
 		String anagram = "";
-		String sentence = "#he&lo @%w$o,r!ld.";
-		String delim = "#&@%$,!.";
+		String sentence = "#he&lo @%w$o,rld.";
+		String delim = "#&@%$,. ";
 
 		StringTokenizer tokenazer = new StringTokenizer(sentence, delim, true);
-		StringBuilder sentence1 = new StringBuilder();
-
 		while (tokenazer.hasMoreTokens()) {
-
-			anagram = tokenazer.nextToken();
-			sentence1.append(anagram);
-			sentence1 = sentence1.reverse();
+			StringBuilder sentence1 = new StringBuilder();
+			String token = tokenazer.nextToken();
+			sentence1.append(token);
+			token = sentence1.reverse().toString();
+			anagram += token;
 		}
-		System.out.println(sentence1);
+		System.out.println(anagram);
 	}
 }
