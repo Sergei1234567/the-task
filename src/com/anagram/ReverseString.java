@@ -7,9 +7,9 @@ class ReverseString {
 	public static void main(String[] args) {
 		String anagram = "";
 		String sentence = "#he&lo @%w$o,r!ld.";
-		String delim = "@.";
+		String delim = "#&@%$,!.";
 
-		StringTokenizer tokenazer = new StringTokenizer(sentence, delim);
+		StringTokenizer tokenazer = new StringTokenizer(sentence, delim, true);
 		StringBuilder sentence1 = new StringBuilder();
 
 		while (tokenazer.hasMoreTokens()) {
@@ -17,7 +17,7 @@ class ReverseString {
 			anagram = tokenazer.nextToken();
 			sentence1.append(anagram);
 			sentence1 = sentence1.reverse();
-			System.out.print(sentence1 + " ");
 		}
+		System.out.println(sentence1);
 	}
 }
