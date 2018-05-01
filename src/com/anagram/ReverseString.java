@@ -8,14 +8,12 @@ class ReverseString {
 		String anagram = "";
 		String sentence = "#he&lo @%w$o,rld.";
 		String delim = "#&@%$,. ";
-
-		StringTokenizer tokenazer = new StringTokenizer(sentence, delim, true);
-		while (tokenazer.hasMoreTokens()) {
-			StringBuilder sentence1 = new StringBuilder();
-			String token = tokenazer.nextToken();
-			sentence1.append(token);
-			token = sentence1.reverse().toString();
-			anagram += token;
+		String token = "";
+		StringTokenizer tokenizer = new StringTokenizer(sentence, delim, true);
+		while (tokenizer.hasMoreTokens()) {
+			StringBuilder stringBuilder = new StringBuilder(token);
+			token = tokenizer.nextToken();
+			anagram += stringBuilder.reverse().toString();
 		}
 		System.out.println(anagram);
 	}
