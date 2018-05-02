@@ -8,11 +8,10 @@ class ReverseString {
 		String anagram = "";
 		String sentence = "#he&lo @%w$o,rld.";
 		String delim = "#&@%$,. ";
-		String token = "";
 		StringTokenizer tokenizer = new StringTokenizer(sentence, delim, true);
 		while (tokenizer.hasMoreTokens()) {
+			String token = tokenizer.nextToken();
 			StringBuilder stringBuilder = new StringBuilder(token);
-			token = tokenizer.nextToken();
 			anagram += stringBuilder.reverse().toString();
 		}
 		System.out.println(anagram);
