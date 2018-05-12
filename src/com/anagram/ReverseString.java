@@ -1,8 +1,6 @@
 package com.anagram;
 
 import java.util.StringTokenizer;
-import java.io.*;
-import java.util.Arrays;
 
 class ReverseString {
 
@@ -16,16 +14,23 @@ class ReverseString {
 		}
 		return anagram;
 	}
+
 	public String toAnagram(String sentence) {
+		String anagram = "";
+		char[] simbol = sentence.toCharArray();
 		String delim = "";
-		String string = "";
-		string.toCharArray();
+		for (char i : simbol) {
+			if(!Character.isLetter(i)) {
+				delim += i;
+			}
+		}
 		StringTokenizer tokenizer = new StringTokenizer(sentence, delim, true);
 		while (tokenizer.hasMoreTokens()) {
 			String token = tokenizer.nextToken();
 			StringBuilder stringBuilder = new StringBuilder(token);
-			string += stringBuilder.reverse().toString();
+			anagram += stringBuilder.reverse().toString();
 		}
-		return string;
+
+		return anagram;
 	}
 }
