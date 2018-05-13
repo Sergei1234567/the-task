@@ -16,21 +16,13 @@ class ReverseString {
 	}
 
 	public String toAnagram(String sentence) {
-		String anagram = "";
-		char[] simbol = sentence.toCharArray();
+		char[] symbols = sentence.toCharArray();
 		String delim = "";
-		for (char i : simbol) {
-			if(!Character.isLetter(i)) {
-				delim += i;
+		for (char character : symbols) {
+			if(!Character.isLetter(character)) {
+				delim += character;
 			}
 		}
-		StringTokenizer tokenizer = new StringTokenizer(sentence, delim, true);
-		while (tokenizer.hasMoreTokens()) {
-			String token = tokenizer.nextToken();
-			StringBuilder stringBuilder = new StringBuilder(token);
-			anagram += stringBuilder.reverse().toString();
-		}
-
-		return anagram;
+		return toAnagram(sentence,delim);
 	}
 }
